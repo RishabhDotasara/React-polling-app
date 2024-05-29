@@ -1,16 +1,31 @@
 import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function Home() {
   const [pollId, setPollId] = useState('default')
+  const navigate = useNavigate();
   return (
     
     <div className='container'>
-      <a href="/create">Create a Poll</a>
+      <Link to="/create">Create a Poll</Link>
       <h1>Or</h1>
       <div className="join-poll">
         <input type="text" placeholder='Poll Id here...' required onChange={(e)=>{setPollId(e.target.value)}}/>
-        <a href={`/poll/${pollId}`}>Join a poll</a>
+        <button onClick={()=>{
+          
+              // alert("Please enter a valid poll id.")
+              navigate(`/poll/${pollId}`)
+
+        }}>Join a poll</button>
+        <button onClick={()=>{
+          
+              // alert("Please enter a valid poll id.")
+              navigate(`/result/${pollId}`)
+          
+        }}>View Poll Result</button>
       </div>
+      
+
     </div>
 
     

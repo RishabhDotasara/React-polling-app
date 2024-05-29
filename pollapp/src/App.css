@@ -57,6 +57,7 @@ input
   width: 60vw;
   margin-top: 10px;
   font-size: 1.3rem;
+  text-align: center;
 }
 
 .create
@@ -148,4 +149,13 @@ button:active
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.option-poll
+{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid grey;
 }
