@@ -15,12 +15,7 @@ var polls = [
     //     ]
     // }
 ]
-app.use(cors(
-    {
-        origin: "https://react-polling-app-client.vercel.app/",
-        credentials: true
-    }
-));
+app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
