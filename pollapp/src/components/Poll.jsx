@@ -8,6 +8,7 @@ export default function Poll() {
   const [optionSelected, setOptionSelected] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const address = "https://react-polling-app-server.vercel.app/"
 
   const startTimer = () => {
     let time = 60;
@@ -30,7 +31,7 @@ export default function Poll() {
 
   const getPoll = () => {
     //make the fetch request
-    fetch("https://react-polling-app-server.vercel.app/poll/" + id, {
+    fetch(address+"poll/" + id, {
       method: "GET",
     })
     .then((res) => {
@@ -63,7 +64,7 @@ export default function Poll() {
   //now that the poll is displayed, we need to submit it to the server.
   const submitPoll = () => {
     //get the vote, create a endpoint to submit.
-    fetch("https://react-polling-app-server.vercel.app/submit/" + id, {
+    fetch(address+"submit/" + id, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
