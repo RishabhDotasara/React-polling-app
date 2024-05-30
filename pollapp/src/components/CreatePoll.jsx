@@ -9,6 +9,7 @@ export default function CreatePoll() {
     const [options, setOptions] = useState(["Option 1","Option 2"])
     const [question, setQuestion] = useState("");
     const [id,setId] = useState("")
+    const address = "https://react-polling-app-server.vercel.app/"
 
     const getId = ()=>{
         let result = '';
@@ -33,7 +34,7 @@ export default function CreatePoll() {
         console.log(id);
 
         //make the request
-        fetch("http://localhost:3000/create",{
+        fetch(address+"create",{
             method:"POST",
             headers: {
                 'Content-Type': 'application/json'

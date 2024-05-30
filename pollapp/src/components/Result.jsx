@@ -7,7 +7,7 @@ export default function Result() {
 
 const getPoll = () => {
   //make the fetch request
-  fetch("https://react-polling-app-api.vercel.app//poll/" + id, {
+  fetch("https://react-polling-app-server.vercel.app/poll/" + id, {
     method: "GET",
   })
   .then((res) => {
