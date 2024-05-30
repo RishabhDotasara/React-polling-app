@@ -9,7 +9,7 @@ export default function CreatePoll() {
     const [options, setOptions] = useState(["Option 1","Option 2"])
     const [question, setQuestion] = useState("");
     const [id,setId] = useState("")
-    const address = "https://react-polling-app-server.vercel.app/"
+    const address = "https://react-polling-app-server-qm654qm4i-rishabhs-projects-1e23b367.vercel.app/"
 
     const getId = ()=>{
         let result = '';
