@@ -30,7 +30,7 @@ export default function Poll() {
 
   const getPoll = () => {
     //make the fetch request
-    fetch("https://react-polling-app-server-qm654qm4i-rishabhs-projects-1e23b367.vercel.app/poll/" + id, {
+    fetch("https://react-polling-app-server.vercel.app/poll/" + id, {
       method: "GET",
     })
     .then((res) => {
@@ -63,7 +63,7 @@ export default function Poll() {
   //now that the poll is displayed, we need to submit it to the server.
   const submitPoll = () => {
     //get the vote, create a endpoint to submit.
-    fetch("https://react-polling-app-server-qm654qm4i-rishabhs-projects-1e23b367.vercel.app/submit/" + id, {
+    fetch("https://react-polling-app-server.vercel.app/submit/" + id, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
