@@ -14,13 +14,25 @@ export default function Home() {
         <button onClick={()=>{
           
               // alert("Please enter a valid poll id.")
-              navigate(`/poll/${pollId}`)
+              if (pollId === 'default') {
+                alert("Please enter a valid poll id.")
+              } else
+              {
+
+                navigate(`/poll/${pollId}`)
+              }
 
         }}>Join a poll</button>
         <button onClick={()=>{
           
               // alert("Please enter a valid poll id.")
-              navigate(`/result/${pollId}`)
+              if (pollId === 'default') {
+                alert("Please enter a valid poll id.")
+              } else
+              {
+
+                navigate(`/result/${pollId}`)
+              }
           
         }}>View Poll Result</button>
       </div>

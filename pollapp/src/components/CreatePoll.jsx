@@ -8,6 +8,8 @@ export default function CreatePoll() {
     const [done, setDone] = useState(false);
     const [options, setOptions] = useState(["Option 1","Option 2"])
     const [question, setQuestion] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [msg,setMsg] = useState("Creating the Poll...")
     const [id,setId] = useState("")
     const address = "https://react-polling-app-server.vercel.app/"
 
@@ -21,6 +23,7 @@ export default function CreatePoll() {
     }
 
     const createPoll = (e)=>{
+        setLoading(true);
         e.preventDefault();
         let poll = {
             question:question,
@@ -52,6 +55,7 @@ export default function CreatePoll() {
                 {
                     setDone(true);
                     alert("Poll Created, now you can share the link or Id '"+id+"' ")
+                    setLoading(false)
 
                 }
             else 
@@ -64,7 +68,7 @@ export default function CreatePoll() {
 
   return (
     <>
-        {!done && (
+        {(!done && !loading) && (
             <form className='container create'>
             <h1>Question</h1>
           <input type="text" className='question' required placeholder='Enter the question for poll.' onChange={(e)=>{
@@ -98,6 +102,12 @@ export default function CreatePoll() {
         </form>
         )}
 
+        {loading && (
+            <div className='container'>
+            <h1>{msg}</h1>
+            </div>
+        
+        )}
         {done && (
             <div className='container'>
             <h1>Poll Created!</h1>
