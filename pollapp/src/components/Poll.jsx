@@ -47,7 +47,7 @@ export default function Poll() {
       })
       .then((data) => {
         setPoll(data.poll[0]);
-        setOptionSelected(poll.options[0][0]);
+        
         setLoading(false);
         console.log(data);
       })
@@ -60,11 +60,11 @@ export default function Poll() {
   useEffect(() => {
     getPoll();
 
-    const timer = startTimer();
+    // const timer = startTimer();
 
-    return () => {
-      clearInterval(timer);
-    };
+    // return () => {
+    //   clearInterval(timer);
+    // };
     console.log(poll);
   }, []);
 
@@ -124,10 +124,10 @@ export default function Poll() {
             >
               Submit
             </button>
-            <div className="timer">
+            {/* <div className="timer">
               <h1>Time Left</h1>
               <h2></h2>
-            </div>
+            </div> */}
           </>
         )}
       </div>
